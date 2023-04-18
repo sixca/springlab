@@ -18,20 +18,20 @@ public class UserDTO {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getPwd() {
         return pwd;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
-    }
-
     public String getName() {
         return name;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 
     public void setName(String name) {
@@ -40,7 +40,7 @@ public class UserDTO {
 
     @Override
     public String toString() {
-        return "UserDTO{" +
+        return "userDTO{" +
                 "id='" + id + '\'' +
                 ", pwd='" + pwd + '\'' +
                 ", name='" + name + '\'' +

@@ -7,10 +7,9 @@ import java.util.List;
 
 public class UserMySQLDAO implements MyDao<String, UserDTO> {
 
-
     @Override
     public void insert(UserDTO userDTO) {
-        System.out.println("MySQL Inserted:"+userDTO);
+        System.out.println("MySQL Inserted" + userDTO);
     }
 
     @Override

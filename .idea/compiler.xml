@@ -10,12 +10,14 @@
         <module name="day02" />
         <module name="day01" />
         <module name="day022_XML" />
-        <module name="day023_ANN" />
+        <module name="day024_AOP" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="day022 (1)" target="11" />
       <module name="day022 (2)" target="11" />
+      <module name="day023_ANN (1)" target="11" />
+      <module name="day023_ANN (2)" target="11" />
       <module name="springlab" target="11" />
     </bytecodeTargetLevel>
   </component>

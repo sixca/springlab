@@ -8,29 +8,27 @@ import java.util.List;
 
 public class UserService implements MyService<String, UserDTO> {
 
-    MyDao<String, UserDTO> dao;
+    MyDao<String,UserDTO> dao;
 
-    public UserService(MyDao dao) {
+    public UserService(MyDao dao){
         this.dao = dao;
     }
-    // 생성자
-    // 객체를 가져오지 않고, 순수 인터페이스로만 코드를 완성했다.
-
     @Override
     public void register(UserDTO userDTO) {
         dao.insert(userDTO);
-        System.out.println("Send Mail");
+        System.out.println("register. send mail~");
     }
 
     @Override
     public void remove(String s) {
         dao.delete(s);
+        System.out.println("delete. send mail~");
     }
 
     @Override
     public void modify(UserDTO userDTO) {
         dao.update(userDTO);
-        System.out.println("Send Mail..");
+        System.out.println("update. send mail~");
     }
 
     @Override
