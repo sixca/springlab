@@ -2,20 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <script>
-    let login_form={
-        init:function (){
-            $('#login_btn').click(function(){
-                    login_form.send();
-                });
-        },
-        send:function (){
-            $('#login_form').attr({
-                'action':'/loginimpl',      //MainController에 보내는 Action
-                'method':'get'
-            });
-            $('#login_form').submit();
-            }
-        };
 
     //화면 로딩
     $(function (){
