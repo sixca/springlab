@@ -15,7 +15,7 @@
         init:function(){
             this.display();
             $('#s_btn').click(function (){
-                map03.go(37.579617, 126.977041, 's');
+                map03.go(37.579617, 126.977041, 's'); //loc 's', 'b', 'j' 추가
             });
             $('#b_btn').click(function (){
                 map03.go(35.1586975, 129.1603842, 'b');
@@ -50,7 +50,7 @@
             // 마커가 지도 위에 표시되도록 설정합니다
             marker.setMap(map);
         },
-        go:function (lat, lng, loc){  //경도, 위도, 지역
+        go:function (lat, lng, loc){  //위도, 경도, 지역
             var moveLatLon = new kakao.maps.LatLng(lat, lng);
             map.panTo(moveLatLon);  //지도이동
 

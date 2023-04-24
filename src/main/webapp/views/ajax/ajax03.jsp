@@ -47,7 +47,7 @@
 <div class="col-sm-8 text-left">
     <div class="container" id="getdata">
         <h3>AJAX03</h3>
-        <button type="button">GET DATE</button>
+        <button type="button">GET DATA</button>
         <div></div>
     </div>
 </div>

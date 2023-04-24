@@ -65,13 +65,13 @@ public class AjaxImplController {
             list.add(new Marker(101, "만두", "http://www.naver.com", 37.577617, 126.973041, "b.jpg", "s" ));
             list.add(new Marker(102, "곱창", "http://www.daum.net", 37.575617, 126.978041, "c.jpg", "s" ));
         }else if(loc.equals("b")){
-            list.add(new Marker(103, "국밥", "http://www.nate.com", 35.1586975, 129.1663842, "a.jpg", "b" ));
-            list.add(new Marker(104, "만두", "http://www.naver.com", 35.1536975, 129.1673842, "b.jpg", "b" ));
-            list.add(new Marker(105, "곱창", "http://www.daum.net", 35.1526975, 129.1613842, "c.jpg", "b" ));
+            list.add(new Marker(103, "국밥", "http://www.nate.com", 35.16023980525814, 129.16193009078796, "a.jpg", "b" ));
+            list.add(new Marker(104, "만두", "http://www.naver.com", 35.160645435305895, 129.15737599022964, "b.jpg", "b" ));
+            list.add(new Marker(105, "곱창", "http://www.daum.net",  35.16008139796169, 129.16877309907116 , "c.jpg", "b" ));
 
         }else if(loc.equals("j")){
-            list.add(new Marker(100, "국밥", "http://www.nate.com", 33.2426141, 126.4019696,  "a.jpg", "j" ));
-            list.add(new Marker(101, "만두", "http://www.naver.com",33.2416141, 126.4039696,  "b.jpg", "j" ));
+            list.add(new Marker(100, "국밥", "http://www.nate.com",  33.249389115830844, 126.40840270713205,  "a.jpg", "j" ));
+            list.add(new Marker(101, "만두", "http://www.naver.com",33.247680345031306, 126.3980272031545,  "b.jpg", "j" ));
             list.add(new Marker(102, "곱창", "http://www.daum.net", 33.2476141, 126.4099696,  "c.jpg", "j" ));
         }
         JSONArray ja = new JSONArray();

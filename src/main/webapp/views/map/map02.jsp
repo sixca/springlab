@@ -18,7 +18,7 @@
               map02.go(37.579617, 126.977041);
           });
           $('#b_btn').click(function (){
-              map02.go(35.1938469, 129.1536102);
+              map02.go(35.1585914837981, 129.16037219970022);
           });
           $('#j_btn').click(function (){
               map02.go(33.2446141, 126.4059696);
@@ -50,7 +50,7 @@
           // 마커가 지도 위에 표시되도록 설정합니다
           marker.setMap(map);
       },
-      go:function (lat, lng){  //경도, 위도
+      go:function (lat, lng){  //위도, 경도
           var moveLatLon = new kakao.maps.LatLng(lat, lng);
           map.panTo(moveLatLon);  //지도이동
 

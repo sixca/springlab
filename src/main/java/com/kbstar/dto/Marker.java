@@ -16,3 +16,4 @@ public class Marker {
     private String img;
     private String loc;
 }
+//loc 추가하여 해당 loc 주변에 맛집 데이터를 가져오기 위해 Marker DTO 생성함
