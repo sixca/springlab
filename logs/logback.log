@@ -1,0 +1,51 @@
+[2023-04-23 00:04:54:3830806][http-nio-80-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/jsp", parameters={}
+[2023-04-23 00:04:54:3830812][http-nio-80-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kbstar.controller.JSPController#main(Model)
+[2023-04-23 00:04:54:3830825][http-nio-80-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+[2023-04-23 00:04:54:3830825][http-nio-80-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name 'index', model {left=jsp/left, center=jsp/center}
+[2023-04-23 00:04:54:3830826][http-nio-80-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2023-04-23 00:04:54:3830951][http-nio-80-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2023-04-23 00:04:54:3830973][http-nio-80-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/index0421.js", parameters={}
+[2023-04-23 00:04:54:3830975][http-nio-80-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+[2023-04-23 00:04:54:3830977][http-nio-80-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2023-04-23 00:04:56:3832686][http-nio-80-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/jsp/jsp01", parameters={}
+[2023-04-23 00:04:56:3832686][http-nio-80-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kbstar.controller.JSPController#jsp01(Model)
+[2023-04-23 00:04:56:3832694][http-nio-80-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+[2023-04-23 00:04:56:3832694][http-nio-80-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name 'index', model {num=1000.324, cust=Cust(id=id01, pwd=pwd01, name=<a href=''>k</a>), cdate=Sun Apr 23 00:04:56 KST 2023, left=jsp/left, center=jsp/jsp01, org.springframework.validation.BindingResult.cust=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+[2023-04-23 00:04:56:3832694][http-nio-80-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2023-04-23 00:04:56:3833071][http-nio-80-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2023-04-23 00:04:56:3833143][http-nio-80-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/index0421.js", parameters={}
+[2023-04-23 00:04:56:3833143][http-nio-80-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+[2023-04-23 00:04:56:3833148][http-nio-80-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2023-04-23 00:12:28:4285061][http-nio-80-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/item", parameters={}
+[2023-04-23 00:12:28:4285062][http-nio-80-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kbstar.controller.ItemController#main(Model)
+[2023-04-23 00:12:28:4285066][http-nio-80-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+[2023-04-23 00:12:28:4285066][http-nio-80-exec-7] DEBUG o.s.web.servlet.view.JstlView - View name 'index', model {left=item/left, center=item/center}
+[2023-04-23 00:12:28:4285067][http-nio-80-exec-7] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2023-04-23 00:12:28:4285198][http-nio-80-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2023-04-23 00:12:28:4285225][http-nio-80-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/index0421.js", parameters={}
+[2023-04-23 00:12:28:4285226][http-nio-80-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+[2023-04-23 00:12:28:4285231][http-nio-80-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2023-04-23 00:12:30:4286936][http-nio-80-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/item/all", parameters={}
+[2023-04-23 00:12:30:4286936][http-nio-80-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kbstar.controller.ItemController#all(Model)
+[2023-04-23 00:12:30:4286937][http-nio-80-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+[2023-04-23 00:12:30:4286945][http-nio-80-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name 'index', model {allitem=[Item(id=100, name=사탕, price=1000, imgname=a.jpg, regdate=Sun Apr 23 00:12:30 KST 2023), Item(id=101, name=초코릿, price=2000, imgname=b.jpg, regdate=Sun Apr 23 00:12:30 KST 2023), Item(id=102, name=아스크림, price=3000, imgname=c.jpg, regdate=Sun Apr 23 00:12:30 KST 2023), Item(id=103, name=호떡, price=4000, imgname=d.jpg, regdate=Sun Apr 23 00:12:30 KST 2023), Item(id=104, name=커피, price=5000, imgname=e.jpg, regdate=Sun Apr 23 00:12:30 KST 2023)], left=item/left, center=item/all}
+[2023-04-23 00:12:30:4286945][http-nio-80-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2023-04-23 00:12:30:4287065][http-nio-80-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2023-04-23 00:12:30:4287080][http-nio-80-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/index0421.js", parameters={}
+[2023-04-23 00:12:30:4287080][http-nio-80-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/img/a.jpg", parameters={}
+[2023-04-23 00:12:30:4287081][http-nio-80-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+[2023-04-23 00:12:30:4287081][http-nio-80-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+[2023-04-23 00:12:30:4287084][http-nio-80-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2023-04-23 00:12:30:4287090][http-nio-80-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2023-04-23 00:12:30:4287306][http-nio-80-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/img/b.jpg", parameters={}
+[2023-04-23 00:12:30:4287307][http-nio-80-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+[2023-04-23 00:12:30:4287310][http-nio-80-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/img/c.jpg", parameters={}
+[2023-04-23 00:12:30:4287311][http-nio-80-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+[2023-04-23 00:12:30:4287314][http-nio-80-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/img/d.jpg", parameters={}
+[2023-04-23 00:12:30:4287314][http-nio-80-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/img/e.jpg", parameters={}
+[2023-04-23 00:12:30:4287315][http-nio-80-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+[2023-04-23 00:12:30:4287315][http-nio-80-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+[2023-04-23 00:12:30:4287319][http-nio-80-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2023-04-23 00:12:30:4287319][http-nio-80-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2023-04-23 00:12:30:4287319][http-nio-80-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2023-04-23 00:12:30:4287319][http-nio-80-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
