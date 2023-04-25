@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <property name="LOGS_ABSOLUTE_PATH" value="./logs" />
-<!--  test실행 시, 최초에 logs폴더가 생성되며 log가 기록됨  -->
+    <!--  test실행 시, 최초에 logs폴더가 생성되며 log가 기록됨  -->
+    <property name="LOGS_CUSTINFO" value="./src/main/resources/static/logs" />
+    <!--  0425 수업. 추가 생성 고객정보 LOG를 만들자  -->
+
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread] %-5level %logger{36} - %msg%n</Pattern>
@@ -23,6 +26,22 @@
         </rollingPolicy>
     </appender>
 
+    <!--  0425 수업. 추가 생성 고객정보 LOG를 만들자  -->
+    <appender name="FILE2" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_CUSTINFO}/custinfo.log</file>    <!--  로그기록이 이 폴더에 저장  -->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss}, %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS_CUSTINFO}/logback.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>5MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+
 <!-- <root level="INFO">를 <root level="ERROR"> 로 바꾸면 :: 에러일 때만 출력  -->
 <!--    test에서 출력을 logger.info() 로 하니깐..   -->
     <root level="INFO">
@@ -32,6 +51,11 @@
     <logger name="org.springframework.web" level="DEBUG">
         <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE" />
+    </logger>
+
+    <!--  0425 수업. 추가 생성 고객정보 LOG를 만들자  -->
+    <logger name="com.kbstar.controller.CustController" level="INFO">
+        <appender-ref ref="FILE2" />
     </logger>
     <!--
     <logger name="jdbc" level="OFF" />

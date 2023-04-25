@@ -84,7 +84,7 @@
                     image : markerImage
                 });   //지역별 3개의 마커가 생성되겠지. 데이터에 각 3개씩 있으니까
                 // infoWindow
-                var iwContent = '<h2>'+positions[i].title+'</h2>';
+                var iwContent = '<h1>'+positions[i].title+'</h1>';
                 iwContent += '<img src="/img/'+positions[i].img+'" style="width:50px">';
 
                 var infowindow = new kakao.maps.InfoWindow({

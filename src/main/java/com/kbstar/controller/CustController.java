@@ -1,20 +1,21 @@
 package com.kbstar.controller;
 
 import com.kbstar.dto.Cust;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
+@Slf4j       //Logger 선언없이 로그를 사용할 수 있게 됨
 @Controller
 @RequestMapping("/cust")          //라우터 생성 같은건가..
 public class CustController {
 
-    Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    //Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
     //로그기록 사용 선언
 
     String dir = "cust/";
@@ -24,6 +25,10 @@ public class CustController {
     public String main(Model model){
         model.addAttribute("left", dir+"left");
         model.addAttribute("center", dir+"center");
+        //logger.info("--------------로그찍앗---------------");
+        Random r = new Random();
+        int inx = r.nextInt(1000)+1;
+        log.info(inx+"");     //1000 이하 숫자가 로그에 찍히도록
         return "index";
     }
 
