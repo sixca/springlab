@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOGS_ABSOLUTE_PATH" value="./logs" />
+<!--  test실행 시, 최초에 logs폴더가 생성되며 log가 기록됨  -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+
+<!--  파일로는 이렇게 저장해라  -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_ABSOLUTE_PATH}/logback.log</file>
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS_ABSOLUTE_PATH}/logback.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>5MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+<!-- <root level="INFO">를 <root level="ERROR"> 로 바꾸면 :: 에러일 때만 출력  -->
+<!--    test에서 출력을 logger.info() 로 하니깐..   -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <logger name="org.springframework.web" level="DEBUG">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </logger>
+    <!--
+    <logger name="jdbc" level="OFF" />
+	<logger name="jdbc.sqlonly" level="DEBUG" />
+	<logger name="jdbc.sqltiming" level="DEBUG" />
+	<logger name="jdbc.audit" level="OFF" />
+	<logger name="jdbc.resultset" level="DEBUG" />
+	<logger name="jdbc.resultsettable" level="DEBUG" />
+	<logger name="jdbc.connection" level="OFF" />
+	-->
+    <!-- INFO(trace > debug > info > warn > error) :: 5가지 모드(영역별), 출력량이 큼->작아짐 -->
+<!--  sysout으로 출력해서 보던 것을 로그로 바꾸어서, test하는 것  -->
+</configuration>
