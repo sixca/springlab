@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.shop.mapper.CustMapper">
+<mapper namespace="com.kbstar.mapper.CustMapper">
 
     <select id="select" parameterType="String" resultType="cust">
         SELECT * FROM cust WHERE id=#{id}

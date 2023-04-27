@@ -12,7 +12,7 @@ public class Marker {
     private String title;
     private String target;
     private double lat;
-    private double lng;
+    private double lng;   //float 도 가능요
     private String img;
     private String loc;
 }

@@ -14,3 +14,4 @@ import org.springframework.stereotype.Repository;
 public interface CustMapper extends KBMapper<String, Cust> {
 
 }
+//어노테이션을 통해 이렇게 선언으로 종료. KBMapper의 메서드 사용

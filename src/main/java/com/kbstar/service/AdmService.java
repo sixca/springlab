@@ -1,8 +1,8 @@
 package com.kbstar.service;
 
-import com.kbstar.dto.Cust;
+import com.kbstar.dto.Adm;
 import com.kbstar.frame.KBService;
-import com.kbstar.mapper.CustMapper;
+import com.kbstar.mapper.AdmMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,35 +11,33 @@ import java.util.List;
 
 @Slf4j   //로그사용
 @Service
-public class CustService implements KBService<String, Cust> {
-
+public class AdmService implements KBService<String, Adm> {
     @Autowired
-    CustMapper mapper;
+    AdmMapper mapper;
 
     @Override
-    public void register(Cust cust) throws Exception {
-        mapper.insert(cust);
-//        mapper.insert(cust);    //중복 실행 오류 test.
-        log.info("Sned Mail..."+cust.getId());
+    public void register(Adm adm) throws Exception {
+        mapper.insert(adm);
     }
 
     @Override
     public void remove(String s) throws Exception {
         mapper.delete(s);
+
     }
 
     @Override
-    public void modify(Cust cust) throws Exception {
-        mapper.update(cust);
+    public void modify(Adm adm) throws Exception {
+        mapper.update(adm);
     }
 
     @Override
-    public Cust get(String s) throws Exception {
+    public Adm get(String s) throws Exception {
         return mapper.select(s);
     }
 
     @Override
-    public List<Cust> get() throws Exception {
+    public List<Adm> get() throws Exception {
         return mapper.selectall();
     }
 }

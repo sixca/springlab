@@ -1,35 +1,39 @@
-package com.kbstar.cust;
+package com.kbstar.Item;
 
 import com.kbstar.dto.Cust;
+import com.kbstar.dto.Item;
 import com.kbstar.service.CustService;
+import com.kbstar.service.ItemService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DuplicateKeyException;
 
+import java.util.Date;
+
 @Slf4j
 @SpringBootTest
-public class InsertTest {
-
+class InsertTest {
 	@Autowired
-	CustService service;
+	ItemService service;
 
 	@Test
-	void contextLoads(){
-		Cust obj = new Cust("id22", "pwd22", "kwon1");
-		try {
+	void contextLoads() {
+		Item obj = new Item(1, "name", 30, "img1", null);
+		try{
 			service.register(obj);
+			log.info("success");
 			service.get();
-			log.info("등록 정상");
-		} catch (Exception e) {
-			// 객체 비교 (예외상황 객체 비교)
+		}catch(Exception e){
 			if(e instanceof DuplicateKeyException){
-				log.info("ID가 중복 되었습니다");
-			}else {
+				log.info("ID가 중복되었습니다.");
+			}else{
 				log.info("시스템 장애입니다.");
+				e.printStackTrace();
 			}
-			// e.printStackTrace();
 		}
+
 	}
+
 }

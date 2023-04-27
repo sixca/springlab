@@ -2,10 +2,11 @@
 <configuration>
     <!-- C > project > logs 폴더를 만들어서 log를 저장하겠습니다 -->
     <property name="LOGS_DIR" value="c://project/logs" />
-    <property name="LOGS_CUSTINFO" value="./src/main/resources/static/logs"></property>
+
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
-            <Pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread] %-5level %logger{36} - %msg%n</Pattern>
+<!--            <Pattern>[%d{MM-dd HH:mm:ss}][%thread] %-5level %logger{36} - %msg%n</Pattern>-->
+            <Pattern>[%d{MM-dd HH:mm:ss}] %-5level %logger{36} - %msg%n</Pattern>
         </layout>
     </appender>
 
@@ -50,14 +51,14 @@
     <logger name="com.kbstar.controller.CustController" level="INFO">
         <appender-ref ref="FILE2" />
     </logger>
-    <!--
+
     <logger name="jdbc" level="OFF" />
-	<logger name="jdbc.sqlonly" level="DEBUG" />
+	<logger name="jdbc.sqlonly" level="INFO" />
 	<logger name="jdbc.sqltiming" level="DEBUG" />
 	<logger name="jdbc.audit" level="OFF" />
 	<logger name="jdbc.resultset" level="DEBUG" />
-	<logger name="jdbc.resultsettable" level="DEBUG" />
+	<logger name="jdbc.resultsettable" level="INFO" />
 	<logger name="jdbc.connection" level="OFF" />
-	-->
+
     <!-- INFO(trace > debug > info > warn > error)  -->
 </configuration>
