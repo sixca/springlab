@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
     @ControllerAdvice
     public class CustomErrorController {
-        @ExceptionHandler(Exception.class)
+        @ExceptionHandler(Exception.class)   //어떤 상황에서도 Exception이 발생하면 핸들러 작동
         public String except(Exception e, Model model){
             model.addAttribute("msg",e.getMessage());
             model.addAttribute("center","error/error_page1");
