@@ -5,5 +5,6 @@
   <p>Cust Left</p>
   <p><a href="/cust/add">ADD</a></p>
   <p><a href="/cust/all">All</a></p>
+  <p><a href="/cust/allpage">All Page</a></p>
 </div>
 <%-- Left Menu end --%>
