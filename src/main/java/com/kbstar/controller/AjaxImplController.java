@@ -34,6 +34,8 @@ public class AjaxImplController {
     @Value("${uploadimgdir}")
     String imgdir;
 
+
+    //pic 메뉴에서 찍힌 사진을 저장하는 기능
     @RequestMapping("/saveimg")
     public String saveimg(MultipartFile file){
         String filename = file.getOriginalFilename();

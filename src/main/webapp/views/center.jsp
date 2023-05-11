@@ -38,14 +38,13 @@
     }
   };
   $(function(){
-    center.init();
+    //center.init();
   });
 </script>
 
 <div class="col-sm-8 text-left">
   <h1><spring:message code="site.title"/></h1>
   <p><spring:message code="site.content"/></p>
-
   <hr>
   <textarea id="w1" cols="80" rows="10">${weatherinfo}</textarea>
 <%--  <hr> -- %> <%-- weather2-- %>

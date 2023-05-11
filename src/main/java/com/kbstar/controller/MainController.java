@@ -36,8 +36,8 @@ public class MainController {
 
     @RequestMapping("/")
     public String main(Model model) throws Exception {
-        String result = WeatherUtil.getWeather1("109");
-        model.addAttribute("weatherinfo",result);
+        //String result = WeatherUtil.getWeather1("109");
+        //model.addAttribute("weatherinfo",result);
         return "index";
     }
 
@@ -48,6 +48,18 @@ public class MainController {
         model.addAttribute("center","login");
         return "index";
     }
+
+    @RequestMapping("/cfr1")
+    public String cfr1(Model model){
+        model.addAttribute("center","cfr1");
+        return "index";
+    }
+    @RequestMapping("/cfr2")
+    public String cfr2(Model model){
+        model.addAttribute("center","cfr2");
+        return "index";
+    }
+
     @RequestMapping("/pic")
     public String pic(Model model){
         model.addAttribute("center","pic");

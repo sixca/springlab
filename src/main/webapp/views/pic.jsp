@@ -7,13 +7,13 @@
         myVideoStream:null,
         init:function(){
             this.myVideoStream = document.querySelector('#myVideo');
-            $('#cfr_btn').click(function(){
-                $('#cfr_form').attr({
-                    'method':'post',
-                    'action':'/cfrimpl'
-                });
-                $('#cfr_form').submit();
-            });
+            // $('#cfr_btn').click(function(){
+            //     $('#cfr_form').attr({
+            //         'method':'post',
+            //         'action':'/cfrimpl'
+            //     });
+            //     $('#cfr_form').submit();
+            // });
         },
         getVideo:function(){
             navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
@@ -78,8 +78,13 @@
     <input type=button value="get Pic" onclick="pic.takeSnapshot();">
     <input type=button value="send Pic" onclick="pic.send();"><br>
     <input type=button value="Auto Pic" onclick="pic.takeAuto(5000);">
-    <form id="cfr_form">
+    <form id="cfr_form" action="/mycfr" method="/get">
         Image Name:<input type="text" name="imgname" id="imgname"><br>
-        <button id="cfr_btn">CFR</button>
+        <button type="submit" id="cfr_btn">CFR</button>
     </form>
+    <%--  cfr2의 결과를 뿌려보자  --%>
+    <p>Emotion: ${result.emotion}</p>
+    <p>Pose: ${result.pose}</p>
+    <p>Gender: ${result.gender}</p>
+    <p>Age: ${result.age}</p>
 </div>
