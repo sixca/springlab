@@ -113,6 +113,12 @@
             <artifactId>bootstrap</artifactId>
             <version>3.3.7</version>
         </dependency>
+        <!--    시큐어코딩    -->
+        <dependency>
+            <groupId>com.github.ulisesbocchio</groupId>
+            <artifactId>jasypt-spring-boot-starter</artifactId>
+            <version>3.0.3</version>
+        </dependency>
 
     </dependencies>
 

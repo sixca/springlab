@@ -3,19 +3,29 @@ package com.kbstar.util;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 //유명인사 얼굴인식 기능. 유명인의 이름과 신뢰도 를 출력해주네. Tests에서 확인.
+
+@Component    //스프링부트 콘테이너 위에서 동작하는 자바클래스로 변경시니는 어노테이션 :: component + value는 set
+// 이렇게 선언 후에는 다른 곳에서 @Autowired로 쓸 수 있음.
 public class CFRCelebrityUtil {
-    public  static Object getResult(String imgpath, String imgname) throws ParseException {
+
+    @Value("${cfr_id}")
+    String cfr_id;
+    @Value("${cfr_key}")
+    String cfr_key;
+    public Object getResult(String imgpath, String imgname) throws ParseException {
         String result= "";
 
         StringBuffer reqStr = new StringBuffer();
-        String clientId = "r411gdlv2d";//애플리케이션 클라이언트 아이디값";
-        String clientSecret = "uqRIiax9Q8sAz8z6bkHyMFqDIpsmvtxivjeBo3bI";//애플리케이션 클라이언트 시크릿값";
+        String clientId = cfr_id;//애플리케이션 클라이언트 아이디값";
+        String clientSecret = cfr_key;//애플리케이션 클라이언트 시크릿값";
         try {
             String paramName = "image"; // 파라미터명은 image로 지정
             String imgFile = imgpath+imgname;

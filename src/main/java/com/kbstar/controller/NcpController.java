@@ -5,8 +5,8 @@ import com.kbstar.util.*;
 import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +23,12 @@ public class NcpController {
     @Value("${uploadimgdir}")
     String imgpath;
 
+    @Autowired
+    CFRFaceUtil faceUtil;
+
+    @Autowired
+    CFRCelebrityUtil celebrityUtil;
+
     @RequestMapping("/cfr1impl")
     public String cfr1impl(Model model, Ncp ncp) throws ParseException {
        // img를 서버에 저장한다
@@ -31,7 +37,7 @@ public class NcpController {
         // NCP에 요청한다  :: test했던 것 복붙
         String imgname = ncp.getImg().getOriginalFilename(); //이미지명 추출
         JSONObject result =
-                (JSONObject) CFRCelebrityUtil.getResult(imgpath, imgname);
+                (JSONObject) celebrityUtil.getResult(imgpath, imgname);
         log.info(result.toJSONString());
 
         // 결과를 받는다. JSONObject인 result 안에 faces array 안에, 첫번째 배열 안에, celebrity라는 Object 안에 String인 value를 추출!
@@ -53,7 +59,7 @@ public class NcpController {
         // NCP에 요청한다  :: test했던 것 복붙
         String imgname = ncp.getImg().getOriginalFilename(); //이미지명 추출
         JSONObject result =
-                (JSONObject) CFRFaceUtil.getResult(imgpath, imgname);
+                (JSONObject) faceUtil.getResult(imgpath, imgname);
         log.info(result.toJSONString());
 
         // 결과를 받는다. emotion, gender, pose, age :: 결과 4개를 어떻게 모델에 담을까?
@@ -104,7 +110,7 @@ public String mycfr(Model model, String imgname) throws ParseException {
 
         // NCP에 요청한다  :: test했던 것 복붙
     JSONObject result =
-            (JSONObject) CFRFaceUtil.getResult(imgpath, imgname);
+            (JSONObject) faceUtil.getResult(imgpath, imgname);
     log.info(result.toJSONString());
 
     // 결과를 받는다. emotion, gender, pose, age :: 결과 4개를 어떻게 모델에 담을까?

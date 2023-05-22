@@ -3,19 +3,28 @@ package com.kbstar.util;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 //Face  유틸. 사진에 인식된 얼굴의 감정과 성별, 나이 등을 출력해줌.
+
+@Component
 public class CFRFaceUtil {
-    public static Object getResult(String imgpath, String imgname) throws ParseException {
+
+    @Value("${cfr_id}")
+    String cfr_id;
+    @Value("${cfr_key}")
+    String cfr_key;
+    public Object getResult(String imgpath, String imgname) throws ParseException {
         String result="";
 
         StringBuffer reqStr = new StringBuffer();
-        String clientId = "r411gdlv2d";//애플리케이션 클라이언트 아이디값";
-        String clientSecret = "uqRIiax9Q8sAz8z6bkHyMFqDIpsmvtxivjeBo3bI";//애플리케이션 클라이언트 시크릿값";
+        String clientId = cfr_id; //애플리케이션 클라이언트 아이디값";
+        String clientSecret = cfr_key;//애플리케이션 클라이언트 시크릿값";
 
         try {
             String paramName = "image"; // 파라미터명은 image로 지정
