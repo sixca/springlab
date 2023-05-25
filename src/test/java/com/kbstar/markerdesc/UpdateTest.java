@@ -11,7 +11,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @Slf4j
 @SpringBootTest
-class UpdateTest {
+class
+UpdateTest {
     @Autowired
     MarkerDescService service;
     @Test
