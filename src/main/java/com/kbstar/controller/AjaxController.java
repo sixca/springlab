@@ -1,11 +1,19 @@
 package com.kbstar.controller;
 
+import com.kbstar.dto.Cal;
+import com.kbstar.util.DateUtil;
+import lombok.extern.slf4j.Slf4j;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+@Slf4j
 @Controller
 @RequestMapping("/ajax")
 public class AjaxController {
@@ -48,4 +56,5 @@ public class AjaxController {
         model.addAttribute("center",dir+"ajax05");
         return "index";
     }
+
 }

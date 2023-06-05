@@ -16,13 +16,13 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="id">ID:</label>
                         <div class="col-sm-10">
-                            <input type="text" name="id" class="form-control" id="id" placeholder="Enter id">
+                            <input type="text" name="id" class="form-control" id="id" placeholder="Enter id" value="">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Password:</label>
                         <div class="col-sm-10">
-                            <input type="password" name="pwd" class="form-control" id="pwd" placeholder="Enter password">
+                            <input type="password" name="pwd" class="form-control" id="pwd" placeholder="Enter password" value="">
                         </div>
                     </div>
                     <div class="form-group">

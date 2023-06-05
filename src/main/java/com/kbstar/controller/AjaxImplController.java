@@ -1,11 +1,13 @@
 package com.kbstar.controller;
 
+import com.kbstar.dto.Cal;
 import com.kbstar.dto.Cart;
 import com.kbstar.dto.Cust;
 import com.kbstar.dto.Marker;
 import com.kbstar.service.CartService;
 import com.kbstar.service.CustService;
 import com.kbstar.service.MarkerService;
+import com.kbstar.util.DateUtil;
 import com.kbstar.util.FileUploadUtil;
 import com.kbstar.util.WeatherUtil;
 import org.json.simple.JSONArray;
@@ -132,6 +134,129 @@ public class AjaxImplController {
     public Object weather3() throws Exception {
         // 요청하면 기상청에가서 데이터를 가져온다
         return WeatherUtil.getWeather3("108");
+    }
+
+    @RequestMapping("/getcal")
+    public Object getcal(){
+        List<Cal> list= new ArrayList<>();
+        list.add(new Cal("title1","2023-05-01T15:00","","1","/cust"));
+        list.add(new Cal("aa","2023-05-03T15:00","","2","/cust"));
+        list.add(new Cal("ss","2023-05-06T15:00","","3","/cust"));
+        list.add(new Cal("ss","2023-05-06T17:00","","3","/cust"));
+        list.add(new Cal("ss","2023-05-06T17:00","","2","/cust"));
+        // Java Object ---> JSON
+        // JSON(JavaScript Object Notation)
+        // [{},{},{},...]
+        JSONArray ja = new JSONArray();
+        for(Cal obj:list){
+            JSONObject jo = new JSONObject();
+
+            jo.put("title",obj.getTitle());
+            jo.put("start",obj.getStart());
+            jo.put("end",obj.getEnd());
+            if(obj.getDiv().equals("1")){
+                jo.put("color","green");
+            }else if(obj.getDiv().equals("2")){
+                jo.put("color","blue");
+            }else{
+                jo.put("color","red");
+            }
+
+            jo.put("url",obj.getUrl());
+
+            ja.add(jo);
+        }
+        return ja;
+    }
+
+    @RequestMapping("/getcal2")
+    public Object getcal2(){
+        List<Cal> list= new ArrayList<>();
+        list.add(new Cal("title1","2023-05-01","2023-05-05","1","/cust"));
+        list.add(new Cal("aa","2023-05-03","2023-05-06","2","/cust"));
+        list.add(new Cal("ss","2023-05-06","2023-05-09","3","/cust"));
+        list.add(new Cal("ss","2023-05-10","2023-05-12","3","/cust"));
+        list.add(new Cal("ss","2023-05-16","2023-05-19","2","/cust"));
+        // Java Object ---> JSON
+        // JSON(JavaScript Object Notation)
+        // [{},{},{},...]
+        JSONArray ja = new JSONArray();
+        for(Cal obj:list){
+            JSONObject jo = new JSONObject();
+
+            jo.put("title",obj.getTitle());
+            jo.put("start",obj.getStart());
+            jo.put("end", DateUtil.getDateStr(obj.getEnd()));
+
+            if(obj.getDiv().equals("1")){
+                jo.put("color","green");
+            }else if(obj.getDiv().equals("2")){
+                jo.put("color","blue");
+            }else{
+                jo.put("color","red");
+            }
+
+            jo.put("url",obj.getUrl());
+
+            ja.add(jo);
+        }
+        return ja;
+    }
+
+    @RequestMapping("/gettime")
+    public Object gettime(String tdate){
+        JSONArray ja = new JSONArray();
+        if(tdate.equals("2023-06-07")){
+            ja.add("09:00");
+            ja.add("11:00");
+            ja.add("01:00");
+            ja.add("03:00");
+        }else{
+            ja.add("11:00");
+            ja.add("09:00");
+            ja.add("01:00");
+        }
+        return ja;
+    }
+
+    @RequestMapping("/getcal3")
+    public Object getcal3(String start, String end){
+
+        List<Cal> list= new ArrayList<>();
+        list.add(new Cal("title1","2023-05-01","2023-05-05","1","/cust"));
+        list.add(new Cal("aa","2023-05-03","2023-05-06","2","/cust"));
+        list.add(new Cal("ss","2023-05-06","2023-05-09","3","/cust"));
+        list.add(new Cal("ss","2023-05-10","2023-05-12","3","/cust"));
+        list.add(new Cal("ss","2023-05-16","2023-05-19","2","/cust"));
+        // Java Object ---> JSON
+        // JSON(JavaScript Object Notation)
+        // [{},{},{},...]
+        JSONArray ja = new JSONArray();
+        for(Cal obj:list){
+            JSONObject jo = new JSONObject();
+
+            jo.put("title",obj.getTitle());
+            jo.put("start",obj.getStart());
+
+            /*
+                calendar 에서는 5.1 ~ 5.3 선택하면 5.3 0시가 Default임
+                util : 5.1~5.3 선택하면 마지막 3일에 대한 전체를 인식시키기 위한 Util임
+             */
+            jo.put("end", DateUtil.getDateStr(obj.getEnd()));
+
+            if(obj.getDiv().equals("1")){
+                jo.put("color","green");
+            }else if(obj.getDiv().equals("2")){
+                jo.put("color","blue");
+            }else{
+                jo.put("color","red");
+            }
+
+            jo.put("url",obj.getUrl());
+
+            ja.add(jo);
+        }
+        return ja;
     }
 
 }
